@@ -1,0 +1,23 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="register-title">New Account Registration</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="mb-3">
+        <div class="input-group">
+          <input id="username"  placeholder="username" name="username" [(ngModel)]="username">
+          <input id="password"  type="password" placeholder="password" name="password" [(ngModel)]="password">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" (click)="onClick(); c('Save click')">Register</button>
+    <footer>Note: Username and password must be 4 to 8 characters long.</footer>
+  </div>
+  <br>
+</ng-template>
+
+<button class="btn btn-primary" (click)="open(content)">Register New Account</button>

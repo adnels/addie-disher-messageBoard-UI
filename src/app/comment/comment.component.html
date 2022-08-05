@@ -1,0 +1,30 @@
+<div>
+  <p>Displayed Comments on Post</p>
+</div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h3 class="modal-title" id="comment">New Comment</h3>
+    <button class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+  </div>
+
+  <div class="modal-body">
+    <form>
+      <div class="mb-3">
+        <div class="input-group">
+          <textarea placeholder="Write a comment"></textarea>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" (click)="c('Save click')">Submit</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-primary" (click)="open(content)">Add A Comment</button>
+<br>
+<br>
+<button class="btn btn-warning">Edit Comment</button>
+<br>
+<button class="btn btn-danger">Delete Comment</button>

@@ -1,0 +1,35 @@
+<h1>Message Board</h1>
+<br>
+<div>
+  <h4>Title of Post</h4>
+</div>
+<div>
+  <p>Body of Post</p>
+</div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h3 class="modal-title" id="post-title">New Post</h3>
+    <button class="btn-close" aria-label="('Close')" (click)="d('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="mb-3">
+        <div class="input-group">
+          <input name="title" id="title" placeholder="Title" [(ngModel)]="title">
+          <textarea name="body" id="body" placeholder="Write your post here." [(ngModel)]="body"></textarea>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" (click)="onClick(); c('Save click')">Submit</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-primary" (click)="open(content)">Make A New Post</button>
+<br>
+<br>
+<button class="btn btn-warning">Edit Post</button>
+<br>
+<button class="btn btn-danger">Delete Post</button>

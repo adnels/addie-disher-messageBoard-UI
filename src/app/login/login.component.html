@@ -1,0 +1,22 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="login">Account Login</h4>
+    <button class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="mb-3">
+        <div class="input-group">
+          <input id="username" [(ngModel)]="username" placeholder="username" name="username">
+          <input id="password" [(ngModel)]="password" type="password" placeholder="password" name="password">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" (click)="onClick(); c('Save click')">Log In</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-primary" (click)="open(content)">Log In To Message Board</button>
+

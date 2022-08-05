@@ -1,0 +1,33 @@
+<h3>Mailbox</h3>
+<br>
+<div>
+  <p id="personalMessages"></p>
+</div>
+
+<button class="btn btn-primary" (click)="onClick()">Your Mailbox</button>
+
+
+<br>
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h3 class="modal-title" id="write-new-message">New Message</h3>
+    <button class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="mb-3">
+        <div class="input-group">
+          <input placeholder="Recipient">
+          <textarea placeholder="Write a message"></textarea>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" (click)="c('Save click')">Send</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-primary" (click)="open(content)">Write New Message</button>
+<br>
+<button class="btn btn-primary">Back To Message Board</button>
